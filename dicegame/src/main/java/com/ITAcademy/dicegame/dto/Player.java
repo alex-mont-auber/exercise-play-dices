@@ -1,11 +1,7 @@
 package com.ITAcademy.dicegame.dto;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.Fetch;
-
 import javax.persistence.*;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @Table(name="player") // Tab Cliente
@@ -23,12 +19,15 @@ public class Player
     @Column(name="percent_success")
     private int perCentSuccess;
 
+    @Column(name="number_games")
+    private int numberGames;
+
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateRegistrer;
 
-    @OneToMany
+    /*@OneToMany
     @JoinColumn(name="id_gamble_of_player")
-    private List<Gamble> gamble;
+    private List<Gamble> gamble;*/
 
     // Constructors
 
@@ -36,11 +35,12 @@ public class Player
 
     }
 
-    public Player(Long idPlayer, String playerName, int perCentSuccess, Date dateRegistrer)
+    public Player(Long idPlayer, String playerName, int perCentSuccess, int numberGames, Date dateRegistrer)
     {
         this.idPlayer = idPlayer;
         this.playerName = playerName;
         this.perCentSuccess = perCentSuccess;
+        this.numberGames = numberGames;
         this.dateRegistrer = dateRegistrer;
     }
 
@@ -75,10 +75,4 @@ public class Player
     public void setDateRegistrer(Date dateRegistrer) {
         this.dateRegistrer = dateRegistrer;
     }
-        //testing
-    @JsonIgnore
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "Gamble")
-    public List<Gamble> getGamble() {return gamble; }
-
-    public void setGamble(List <Gamble> gamble) {this.gamble = gamble; }
 }
