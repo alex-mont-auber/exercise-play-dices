@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Dice Game</title>
+</head>
+<body>
+    <div class="generalBoxes allHeaders">
+        <h1>Dice Games!</h1>
+    </div>
+    <div class="tab" id="tabOne">
+        <button class="tablinks styleMenu" onclick="openTab(event, 'createUser')" id="defaultOpen" id="buttonOne">Create Users</button>
+        <button class="tablinks styleMenu" onclick="openTab(event, 'createUser')" id="buttonTwo">tst</button>
+        <button class="tablinks styleMenu" onclick="openTab(event, 'userProfile')" id="buttonThree">User profile</button>
+        <button class="tablinks styleMenu" onclick="openTab(event, 'joinGame')" id="buttonFour">List of Paints</button>
+        <button class="tablinks styleMenu" onclick="openTab(event, 'resetGambles')" id="buttonFive">RED BUTTON</button>
+    </div>
+
+    <div id="createUser" class="tabcontent generalBoxes">
+        <h2>Welcome to the personalized "hunger" games! If you win, you eat, if not, you are eated for the lions :) like a Russian Roulette, so... WIN, it's a MUST.</h2>
+
+        <div id="presentationBox">
+            <p>Please Enter a name here, if you not eneter any name, your name will be "Anonymous", you can change your name any time in User menu.</p>
+            <div class="centerDivs">
+                <input id="inputName" type="text" placeholder="Name Here!">
+                <button onclick="createPlayer()">Register</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>
