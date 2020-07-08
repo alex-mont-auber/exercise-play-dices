@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.ITAcademy.dicegame.dao.PlayerDAO;
 import com.ITAcademy.dicegame.dto.Player;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -27,14 +28,26 @@ public class PlayerServiceImpl implements InterfacePlayerService
 
     @Override
     public Player saveNewPlayer(Player player)
-    {                                           // Save new registred players (POST)
-        return playerDAO.save(player);
+    {
+        // Save new registred players (POST)
+
+        Date date = new Date();
+        player.setDateRegistrer(date);
+
+        if(player.getPlayerName() == null) {
+            player.setPlayerName("Anonymous");
+            return playerDAO.save(player);
+        } else {
+           return playerDAO.save(player);
+        }
+
+        //return playerDAO.save(player);
     }
 
     @Override
-    public Player changeNamePlayer(Long id)
+    public Player changeNamePlayer(Player player)
     {                                           // Change the name for player (PUT)
-        return playerDAO.findById(id).get();
+        return playerDAO.save(player);
     }
 
     @Override
@@ -49,7 +62,7 @@ public class PlayerServiceImpl implements InterfacePlayerService
     }
 
     @Override
-    public List<Player> showLoosers(){
+    public List<Player> showLosers(){
         return playerDAO.findAll();
     }
 }

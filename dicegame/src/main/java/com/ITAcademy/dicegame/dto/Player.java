@@ -68,6 +68,14 @@ public class Player
         this.perCentSuccess = perCentSuccess;
     }
 
+    public int getNumberGames() {
+        return numberGames;
+    }
+
+    public void setNumberGames(int numberGames) {
+        this.numberGames = numberGames;
+    }
+
     public Date getDateRegistrer() {
         return dateRegistrer;
     }
