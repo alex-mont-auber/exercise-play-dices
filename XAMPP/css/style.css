@@ -10,6 +10,8 @@
 
 body {
     margin: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
     /* MENU */
@@ -54,7 +56,6 @@ body {
     border-top: none;
 }
 
-
 .tab button {
     float: left;
     padding: 14px 16px;
@@ -65,14 +66,9 @@ body {
 .generalBoxes {
     border-width: 1px;
     padding: 0 15px 15px;
-    width: 600px;
+    width: 800px;
     height: auto;
-    margin: auto;
-}
-
-.allHeaders {
-    width: auto;
-    height: 70px;
+    margin: 50px auto auto auto;
 }
 
 .centerDivs {
@@ -80,6 +76,23 @@ body {
     padding: 0 auto;
     text-align: center;
 }
+
+    /* HEADERS*/
+
+.allHeaders {
+    margin: 0px auto auto auto;
+    width: auto;
+    height: 70px;
+}
+
+    /* DICES GAME BUTTONS */
+
+.styleDiceButtons {
+    width: 200px;
+    height: 60px;
+    border-radius: 5px;
+}
+
 /*-- Tipografy ------------------------*/
 
     /* GENERAL */
@@ -88,11 +101,10 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-    /* HEADER*/
+    /* HEADERS*/
 
 .allHeaders {
     text-align: center;
-    color: aquamarine;
 }
 
 .styleMenu {
@@ -100,19 +112,23 @@ body {
     font-weight: 600;
 }
 
-
-
 /*-- Stetics --------------------------*/
 
     /* GENERAL */
 
 body {
-    background-color: #c0c0c0;
+    background-color: #333333;
+    background-image: url("../img/dice.jpg");
+}
+
+    /* HEADER */
+
+.allHeaders {
+    color: #7fffd4;
 }
 
 .styleMenu {
-    color:#05dfdf;
-    border-color: #05dfdf;
+    color: #00b1b1;
 }
 
     /* DIVS */
@@ -151,15 +167,27 @@ body {
     border-color: #ccc;
 }
 
-/*-- KeyFrames --------------------------*/
+/* DICES GAME BUTTONS */
 
+.styleDiceButtons {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.buttonStyles button:hover {
+    background-color: #ff5252;
+    color: #ffffff;
+}
+
+/*-- KeyFrames --------------------------*/
   
 @keyframes fadeEffect {
     from {opacity: 0;}
     to {opacity: 1;}
 }
 
-.tab button {
+.tab button,
+.buttonStyles button {
     transition: 0.3s;
 }
 

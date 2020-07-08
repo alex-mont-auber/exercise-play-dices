@@ -7,20 +7,20 @@
     <title>Dice Game</title>
 </head>
 <body>
+<!-- HEADER TITLE AND MENU -->
     <div class="generalBoxes allHeaders">
         <h1>Dice Games!</h1>
     </div>
     <div class="tab" id="tabOne">
         <button class="tablinks styleMenu" onclick="openTab(event, 'createUser')" id="defaultOpen" id="buttonOne">Create Users</button>
-        <button class="tablinks styleMenu" onclick="openTab(event, 'createUser')" id="buttonTwo">tst</button>
+        <button class="tablinks styleMenu" onclick="openTab(event, 'joinGame')" id="buttonTwo">Join Game!</button>
         <button class="tablinks styleMenu" onclick="openTab(event, 'userProfile')" id="buttonThree">User profile</button>
-        <button class="tablinks styleMenu" onclick="openTab(event, 'joinGame')" id="buttonFour">List of Paints</button>
-        <button class="tablinks styleMenu" onclick="openTab(event, 'resetGambles')" id="buttonFive">RED BUTTON</button>
+        <button class="tablinks styleMenu" onclick="openTab(event, 'allRankings')" id="buttonFour">Rankings</button>
+        <!--<button class="tablinks styleMenu" onclick="openTab(event, 'resetGambles')" id="buttonFive">RED BUTTON</button>-->
     </div>
-
+<!-- DIV CREATE USER -->
     <div id="createUser" class="tabcontent generalBoxes">
         <h2>Welcome to the personalized "hunger" games! If you win, you eat, if not, you are eated for the lions :) like a Russian Roulette, so... WIN, it's a MUST.</h2>
-
         <div id="presentationBox">
             <p>Please Enter a name here, if you not eneter any name, your name will be "Anonymous", you can change your name any time in User menu.</p>
             <div class="centerDivs">
@@ -29,7 +29,37 @@
             </div>
         </div>
     </div>
-
+<!-- DIV JOIN GAME-->
+    <div id="joinGame" class="tabcontent generalBoxes">
+        <h2>We have two types of game, 2 dices and 6 dices, choice your game here.</h2>
+        <div class="centerDivs buttonStyles">
+            <button class="styleDiceButtons" onclick="joinGameTwoDices()">2 Dices</button>
+            <button class="styleDiceButtons" onclick="joinGameSixDices()">6 Dices</button>
+        </div>
+    </div>
+<!-- DIV USER PROFILE -->
+    <div id="userProfile" class="tabcontent generalBoxes">
+        <h3>User Profile</h3>
+        <div id="profileInfo">
+        </div>
+        <div>
+            <input type="text" placeholder="New name here">
+            <button type="submit">Save changes</button>
+        </div>
+    </div>
+<!-- DIV RANKINGS -->
+    <div id="allRankings" class="tabcontent generalBoxes">
+        <div class="">
+            <h3>Ranking Winners</h3>
+        </div>
+        <div class="">
+            <h3>Ranking Loosers</h3>
+        </div>
+        <div class="">
+            <h3>Ranking All Players</h3>
+        </div>
+    </div>
+<!-- ALL SCRIPTS -->
     <script src="js/script.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>

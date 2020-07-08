@@ -62,25 +62,22 @@ function createPlayer()
         data: JSON.stringify(takeInfo),
         success: function()
         {
+        if(takeInfo.playerName == null) {
+            takeInfo.playerName = "Anonymous";
+        }
           document.getElementById("presentationBox").innerHTML = "";
-          document.getElementById("presentationBox").innerHTML = "<p>The registration is correct! Please wait...</p>";
-          function timeWait() {
-            //  setTimeout("", 5000);
-             // document.getElementById("presentationBox").innerHTML ="<button>"
-            }
-          //window.location = "https://localhost/diceGames/selectGame.html";
+          document.getElementById("presentationBox").innerHTML = "<p>Nice! Welcome " + takeInfo.playerName + "! now you can access to all application for play! Good luck! Click in Join Game for enter games!</p>";
         },
         error: function() 
         {
             document.getElementById("presentationBox").innerHTML = "";
-            document.getElementById("presentationBox").innerHTML = "<p>The registration was not successful! Please try again...</p>";
-            setTimeout("", 5000);
-            location.reload();
+            document.getElementById("presentationBox").innerHTML = "<p>The registration was not successful! Please try again...</p><button onclick='location.reload()'>Refresh</button>";
         }
     })
 }
 
     //  ** -- GETS 
+
 function showRanking() {
     $.ajax({
         type: 'GET',
