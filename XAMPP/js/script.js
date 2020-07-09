@@ -39,8 +39,11 @@ function openTab(evt, cityName)
 
 const url = "http://localhost:8080";
 
+    // ** -- Auxiliar User Sesion
 
-    // ** -- POST
+var userSesion;
+
+    // ** -- POST Create Users
 
 function createPlayer() 
 {
@@ -62,9 +65,11 @@ function createPlayer()
         data: JSON.stringify(takeInfo),
         success: function()
         {
-        if(takeInfo.playerName == null) {
-            takeInfo.playerName = "Anonymous";
-        }
+          if(takeInfo.playerName == null) 
+          {
+              takeInfo.playerName = "Anonymous";
+          }
+          userSesion = takeInfo.idPlayer;
           document.getElementById("presentationBox").innerHTML = "";
           document.getElementById("presentationBox").innerHTML = "<p>Nice! Welcome " + takeInfo.playerName + "! now you can access to all application for play! Good luck! Click in Join Game for enter games!</p>";
         },
@@ -74,6 +79,56 @@ function createPlayer()
             document.getElementById("presentationBox").innerHTML = "<p>The registration was not successful! Please try again...</p><button onclick='location.reload()'>Refresh</button>";
         }
     })
+}
+
+    // ** -- Join Game!
+
+function joinGameTwoDices()
+{
+
+  /* TRYING TO APPLY IN BACK DIRECTLY */ 
+
+  function randomNumber()
+  {
+    let randomNumber = Math.floor(Math.random() * 6) + 1;
+
+    return randomNumber;
+  };
+
+  function winOrNot()
+  {
+    if(diceResult == 7) {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
+
+  let letsGameTwoDices = 
+  {
+    idGamble:"",
+    diceOne: randomNumber(),
+    diceTwo: randomNumber(),
+    diceThree: 0,
+    diceFour: 0,
+    diceFive: 0,
+    diceSix: 0,
+    diceResult: diceOne + diceTwo,
+    winOrNot: winOrNot()
+  };
+
+  console.log(letsGameTwoDices);
+
+  $.ajax({
+    type:'POST',
+    url: url + '/players/' + userSesion +'/games',
+    contentType: 'application/json',
+    data:JSON.stringify(letsGameTwoDices),
+    success: function() 
+    {
+      // In construction
+    }
+  })
 }
 
     //  ** -- GETS 
