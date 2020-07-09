@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
     <title>Dice Game</title>
 </head>
 <body>
@@ -33,8 +35,8 @@
     <div id="joinGame" class="tabcontent generalBoxes">
         <h2>We have two types of game, 2 dices and 6 dices, choice your game here.</h2>
         <div class="centerDivs buttonStyles">
-            <button class="styleDiceButtons" onclick="joinGameTwoDices()">2 Dices</button>
-            <button class="styleDiceButtons" onclick="joinGameSixDices()">6 Dices</button>
+            <button class="styleDiceButtons styleAuxiliarButton" onclick="TwoDicesGame()">2 Dices</button>
+            <button class="styleDiceButtons" onclick="SixDicesGame()">6 Dices</button>
         </div>
     </div>
 <!-- DIV USER PROFILE -->
@@ -61,6 +63,7 @@
     </div>
 <!-- ALL SCRIPTS -->
     <script src="js/script.js" type="text/javascript"></script>
+    <script src="js/auxiliar.js" type="text/javascript"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 // ** -- BASE STRUCTURE -- **\\
 
-function openTab(evt, cityName) 
+function openTab(evt, button) 
 {
 
     // Variables
@@ -27,7 +27,7 @@ function openTab(evt, cityName)
 
     // Show the current tab, and add an "active" class to the button that opened the tab
 
-  document.getElementById(cityName).style.display = "block";
+  document.getElementById(button).style.display = "block";
   
   evt.currentTarget.className += " active";
 } 
@@ -39,7 +39,7 @@ function openTab(evt, cityName)
 
 const url = "http://localhost:8080";
 
-    // ** -- Auxiliar User Sesion
+    // ** -- Auxiliar Var's
 
 var userSesion;
 
@@ -81,30 +81,11 @@ function createPlayer()
     })
 }
 
-    // ** -- Join Game!
+    // ** -- Join Game! Two and Six Dices
 
-function joinGameTwoDices()
+function joinGameTwoDices()  
 {
-
-  /* TRYING TO APPLY IN BACK DIRECTLY */ 
-
-  function randomNumber()
-  {
-    let randomNumber = Math.floor(Math.random() * 6) + 1;
-
-    return randomNumber;
-  };
-
-  function winOrNot()
-  {
-    if(diceResult == 7) {
-      return 1;
-    } else {
-      return 0;
-    }
-  }
-
-  let letsGameTwoDices = 
+  let letsGameTwoDices = /* TRYING TO APPLY IN BACK DIRECTLY */
   {
     idGamble:"",
     diceOne: randomNumber(),
@@ -113,11 +94,13 @@ function joinGameTwoDices()
     diceFour: 0,
     diceFive: 0,
     diceSix: 0,
-    diceResult: diceOne + diceTwo,
-    winOrNot: winOrNot()
+    diceResult: sumResult(),
+    winOrNot: winOrNotTwoDices()
   };
 
   console.log(letsGameTwoDices);
+
+  document.getElementById("")
 
   $.ajax({
     type:'POST',
@@ -125,6 +108,35 @@ function joinGameTwoDices()
     contentType: 'application/json',
     data:JSON.stringify(letsGameTwoDices),
     success: function() 
+    {
+      // In construction
+    }
+  })
+}
+
+function joinGameSixDices()
+{
+  let letsGameSixDices = /* TRYING TO APPLY IN BACK DIRECTLY */
+  {
+    idGamble:"",
+    diceOne: randomNumber(),
+    diceTwo: randomNumber(),
+    diceThree: randomNumber(),
+    diceFour: randomNumber(),
+    diceFive: randomNumber(),
+    diceSix: randomNumber(),
+    diceResult: sumResult(),
+    winOrNot: winOrNotSixDices()
+  }
+
+  console.log(letsGameSixDices);
+
+  $.ajax({
+    type:'POST',
+    url: url + '/players/' + userSesion + '/games',
+    contentType: 'application/json',
+    data: JSON.stringify(letsGameSixDices),
+    success: function()
     {
       // In construction
     }

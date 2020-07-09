@@ -1,8 +1,19 @@
 /******* Structure CSS *******/
 
-/*-- VARIABLES ------------------------*/
+/*-- Varibles ------------------------*/
 
+    /* COLORS */
 
+:root {
+    --header-menu: #7fffd4;
+    --button-menu: #00b1b1;
+    --button-hover:  #fff;
+    --bckgnd-bttn-hover: #ff5252;
+    --bckgnd-aux: #333;
+    --var-genBox: #000;
+    --brd-bckgnd-tabs: #ccc;
+    --tab-bckgnd: #f1f1f1;
+}
 
 /*-- Structure ------------------------*/
 
@@ -88,10 +99,20 @@ body {
     /* DICES GAME BUTTONS */
 
 .styleDiceButtons {
-    width: 200px;
+    width: 150px;
     height: 60px;
     border-radius: 5px;
 }
+
+.styleAuxiliarButton {
+    margin-right: 30px;
+}
+
+    /* TABLE GAMES */
+    
+.tableStyle {
+    width: 100%;
+ }
 
 /*-- Tipografy ------------------------*/
 
@@ -112,39 +133,46 @@ body {
     font-weight: 600;
 }
 
+    /* DICE GAMES MODALITIES BUTTONS */
+
+.styleDiceButtons {
+    font-size: 20px;
+    font-weight: 600;
+}
+
 /*-- Stetics --------------------------*/
 
     /* GENERAL */
 
 body {
-    background-color: #333333;
+    background-color: var(--bckgnd-aux);
     background-image: url("../img/dice.jpg");
 }
 
     /* HEADER */
 
 .allHeaders {
-    color: #7fffd4;
+    color: var(--header-menu);
 }
 
 .styleMenu {
-    color: #00b1b1;
+    color: var(--button-menu);
 }
 
     /* DIVS */
 
 .generalBoxes {
-    background-color: #ffffff;;
-    border-color: #000000;
+    background-color: var(--button-hover);
+    border-color: var(--var-genBox);
     border-style: solid;
 }
 
     /* TABS */
 
 .tab { 
-    border-color: #ccc;
+    border-color: var(--brd-bckgnd-tabs);
     border-style: solid;
-    background-color: #f1f1f1;
+    background-color: var(--tab-bckgnd);
 }
 
 .tab button {
@@ -155,16 +183,17 @@ body {
 }
 
 .tab button:hover {
-    background-color: #ddd;
+    background-color: var(--bckgnd-bttn-hover);
+    color: var(--button-hover)
 }
 
 .tab button.active {
-    background-color: #ccc;
+    background-color: var(--brd-bckgnd-tabs);
 }
 
 .tabcontent {
     border-style: solid;
-    border-color: #ccc;
+    border-color: var(--brd-bckgnd-tabs);
 }
 
 /* DICES GAME BUTTONS */
@@ -172,11 +201,12 @@ body {
 .styleDiceButtons {
     font-size: 20px;
     font-weight: 600;
+    color: var(--button-menu)
 }
 
 .buttonStyles button:hover {
-    background-color: #ff5252;
-    color: #ffffff;
+    background-color: var(--bckgnd-bttn-hover);
+    color: var(--button-hover);
 }
 
 /*-- KeyFrames --------------------------*/
@@ -194,3 +224,5 @@ body {
 .tabcontent {
     animation: fadeEffect 1s; 
 }
+
+
