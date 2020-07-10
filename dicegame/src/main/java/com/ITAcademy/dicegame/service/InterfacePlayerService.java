@@ -4,6 +4,7 @@ package com.ITAcademy.dicegame.service;
 import com.ITAcademy.dicegame.dto.Player;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface InterfacePlayerService {
 
@@ -20,6 +21,4 @@ public interface InterfacePlayerService {
     public List <Player> showWinners(); // Show winners ranking
 
     public List <Player> showLosers(); // Show losers ranking
-
-
 }
