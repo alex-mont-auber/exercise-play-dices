@@ -37,9 +37,12 @@ public class Gamble
     @Column(name="winner")
     private boolean winOrNot;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="id_player_for_gamble")
-    @JsonIgnore
+    @Column(name="player_id_gamble")
+    private int playerIdGamble;
+
+    @ManyToOne
+    //@JoinColumn(name="idPlayer")
+    //@JsonIgnore
     private Player player;
 
     public Gamble() {
@@ -123,11 +126,20 @@ public class Gamble
     public void setDiceSix(int diceSix) {
         this.diceSix = diceSix;
     }
-/* public Player getPlayer() {
+
+    public int getplayerIdGamble() {
+        return playerIdGamble;
+    }
+
+    public void setPlayerIdGamble(int playerIdGamble) {
+        this.playerIdGamble = playerIdGamble;
+    }
+
+    public Player getPlayer() {
         return player;
     }
 
     public void setPlayer(Player player) {
         this.player = player;
-    }*/
+    }
 }

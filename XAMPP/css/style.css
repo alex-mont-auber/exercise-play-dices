@@ -109,7 +109,13 @@ body {
 }
 
     /* TABLE GAMES */
-    
+
+table, 
+th, 
+td {
+    border-width: 1px;
+}
+
 .tableStyle {
     width: 100%;
  }
@@ -196,7 +202,14 @@ body {
     border-color: var(--brd-bckgnd-tabs);
 }
 
-/* DICES GAME BUTTONS */
+    /* TABLES */
+
+table, th, td {
+    border-color: var(--var-genBox);
+    border-style: solid;
+}
+
+    /* DICES GAME BUTTONS */
 
 .styleDiceButtons {
     font-size: 20px;

@@ -43,13 +43,13 @@ function winOrNotSixDices()
 function TwoDicesGame() 
 {
     document.getElementById("joinGame").innerHTML ="";
-    document.getElementById("joinGame").innerHTML = '<h2>Two Dices Modality</h2><div class="centerDivs buttonStyles"><table class="tableStyle"><tr><th>Player id</th><th>Name Player</th><th>Dice One</th><th>Dice Two</th><th>Dice Result</th><th>Final Result</th></tr></table><button class="styleDiceButtons styleAuxiliarButton" onclick="joinGameTwoDices()">New Game</button><button class="styleDiceButtons" onclick="goBack()">Back</button></div>';
+    document.getElementById("joinGame").innerHTML = '<h2>Two Dices Modality</h2><div class="centerDivs buttonStyles"><table class="tableStyle" id="tableTwoDicesGame"><tr><th>Player id</th><th>Name Player</th><th>Dice One</th><th>Dice Two</th><th>Dice Result</th><th>Final Result</th></tr></table><button class="styleDiceButtons styleAuxiliarButton" onclick="joinGameTwoDices()">New Game</button><button class="styleDiceButtons" onclick="goBack()">Back</button></div>';
 }
 
 function SixDicesGame() 
 {
     document.getElementById("joinGame").innerHTML ="";
-    document.getElementById("joinGame").innerHTML = '<h2>Six Dices Modality</h2><div class="centerDivs"><table class="tableStyle"><tr><th>Player id</th><th>Name Player</th><th>Dice One</th><th>Dice Two</th><th>Dice Three</th><th>Dice Four</th><th>Dice Five</th><th>Dice Six</th><th>Dice Result</th><th>Final Result</th></tr></table><button class="styleDiceButtons styleAuxiliarButton" onclick="joinGameSixDices()">New Game</button><button class="styleDiceButtons" onclick="goBack()">Back</button></div>';
+    document.getElementById("joinGame").innerHTML = '<h2>Six Dices Modality</h2><div class="centerDivs"><table class="tableStyle" id="tableSixDicesGame"><tr><th>Player id</th><th>Name Player</th><th>Dice One</th><th>Dice Two</th><th>Dice Three</th><th>Dice Four</th><th>Dice Five</th><th>Dice Six</th><th>Dice Result</th><th>Final Result</th></tr></table><button class="styleDiceButtons styleAuxiliarButton" onclick="joinGameSixDices()">New Game</button><button class="styleDiceButtons" onclick="goBack()">Back</button></div>';
 }
 
 function goBack()

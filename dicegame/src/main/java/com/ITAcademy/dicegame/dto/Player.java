@@ -1,7 +1,12 @@
 package com.ITAcademy.dicegame.dto;
 
+import org.hibernate.annotations.Fetch;
+
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table(name="player") // Tab Cliente
@@ -24,10 +29,6 @@ public class Player
 
     @Temporal(TemporalType.TIMESTAMP)
     private Date dateRegistrer;
-
-    /*@OneToMany
-    @JoinColumn(name="id_gamble_of_player")
-    private List<Gamble> gamble;*/
 
     // Constructors
 
